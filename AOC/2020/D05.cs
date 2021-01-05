@@ -37,9 +37,7 @@ namespace AOC._2020
                     Console.WriteLine($"Seat gap found between {left} - {center} - {right}");
                     break;
                 }
-
             }
-
         }
 
         static int DecodePosition(string code, int start, int end)
