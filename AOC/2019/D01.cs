@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -24,8 +23,8 @@ namespace AOC._2019
 
         static long RequiredFuelForMass1(long mass)
         {
-           var fuel = (long)Math.Floor(mass / 3.0) - 2;
-            return fuel; 
+            var fuel = (long)Math.Floor(mass / 3.0) - 2;
+            return fuel;
         }
 
         static long RequiredFuelForMass2(long mass)
@@ -33,7 +32,7 @@ namespace AOC._2019
             if (mass <= 0)
                 return 0;
             var fuel = Convert.ToInt64(Math.Floor(mass / 3.0) - 2);
-            return fuel + RequiredFuelForMass2(fuel); 
+            return fuel + RequiredFuelForMass2(fuel);
         }
     }
 }
