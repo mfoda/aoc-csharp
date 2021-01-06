@@ -19,13 +19,9 @@ namespace AOC._2019
         {
             var mem = input.Split(',').Select(x => Convert.ToInt32(x)).ToArray();
 
-            // copy original for restoring
+            // copy original memory for restoring
             var memCopy = new int[mem.Length];
             mem.CopyTo(memCopy, 0);
-            void RestoreMem()
-            {
-                memCopy.CopyTo(mem, 0); ;
-            }
 
             // part 1
             // restore 1202 state
@@ -40,7 +36,8 @@ namespace AOC._2019
             for (int i = 0; i < 100; i++)
                 for (int j = 0; j < 100; j++)
                 {
-                    RestoreMem();
+                    // restore original memory before each execution
+                    memCopy.CopyTo(mem, 0); ;
                     mem[1] = i;
                     mem[2] = j;
                     Execute(mem);
