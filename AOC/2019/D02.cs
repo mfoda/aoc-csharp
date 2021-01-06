@@ -31,8 +31,8 @@ namespace AOC._2019
             Console.WriteLine($"Value at position 0 after execution halts (part 1) = {mem[0]}");
 
             // part 2
-            int? noun = null;
-            int? verb = null;
+            int noun = 0;
+            int verb = 0;
             for (int i = 0; i < 100; i++)
                 for (int j = 0; j < 100; j++)
                 {
@@ -49,10 +49,7 @@ namespace AOC._2019
                     }
                 }
             LoopEnd:
-            if (noun != null && verb != null)
-                Console.WriteLine($"Result of 100 * noun + verb = {100 * noun + verb}");
-            else
-                Console.WriteLine($"Error: Not found");
+            Console.WriteLine($"Result of 100 * noun + verb = {100 * noun + verb}");
         }
 
         static void Execute(int[] mem)
