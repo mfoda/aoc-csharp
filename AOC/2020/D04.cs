@@ -37,15 +37,9 @@ namespace AOC._2020
             Console.WriteLine($"Number of valid passports (part 2) = {validPassports2.Count()}");
         }
 
-        static bool IsValidPassport1(Passport p)
-        {
-            var requiredFields = new List<object>
-            {
-                p.birthYear, p.issueYear, p.expirationYear,
-                p.height, p.hairColor, p.eyeColor, p.passwordID
-            };
-            return !requiredFields.Any(x => x == null);
-        }
+        static bool IsValidPassport1(Passport p) =>
+            p.birthYear != null && p.issueYear != null && p.expirationYear != null &&
+            p.height != null && p.hairColor != null && p.eyeColor != null && p.passwordID != null;
 
         static bool IsValidPassport2(Passport p)
         {
