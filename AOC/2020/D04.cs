@@ -38,8 +38,13 @@ namespace AOC._2020
         }
 
         static bool IsValidPassport1(Passport p) =>
-            p.birthYear != null && p.issueYear != null && p.expirationYear != null &&
-            p.height != null && p.hairColor != null && p.eyeColor != null && p.passwordID != null;
+            p.birthYear != null
+            && p.issueYear != null
+            && p.expirationYear != null
+            && p.height != null
+            && p.hairColor != null
+            && p.eyeColor != null
+            && p.passwordID != null;
 
         static bool IsValidPassport2(Passport p)
         {
