@@ -26,8 +26,8 @@ namespace AOC._2018
                 End:;
         }
 
-        static int ChecksumIDs(IEnumerable<string> ids) => 
-            ids.Where(x => HasNDuplicates(x, 2)).Count() * ids.Where(x => HasNDuplicates(x, 3)).Count();
+        static int ChecksumIDs(IEnumerable<string> ids) 
+            => ids.Where(x => HasNDuplicates(x, 2)).Count() * ids.Where(x => HasNDuplicates(x, 3)).Count();
 
         static bool HasNDuplicates(IEnumerable<char> stream, int count)
             => stream.Any(x => stream.Count(y => y == x) == count);
