@@ -8,24 +8,24 @@ namespace AOC._2018
 {
     class D05
     {
-        static readonly string input = File.ReadAllText("2018/D04.txt");
+        static readonly string input = File.ReadAllText("2018/D05.txt");
 
         public static void Main()
         {
             // part 1
-            var units = input.ToCharArray().ToList();
+            var units = input.ToCharArray();
             var reacted = ReactPolymer(units);
             Console.WriteLine($"Number of units remaining after fully reacting the polymer = {reacted.Count()}");
 
             // part 2
-            static List<char> RemoveUnit(char ch)
-                => new Regex($"{ch}+", RegexOptions.IgnoreCase).Replace(input, "").ToList();
+            static char[] RemoveUnit(char ch)
+                => new Regex($"{ch}+", RegexOptions.IgnoreCase).Replace(input, "").ToCharArray();
 
             var reducedPolymers = "abcdefghijklmnopqrstuvwxyz".Select(ch => ReactPolymer(RemoveUnit(ch)).Count());
             Console.WriteLine($"Length of shortest possible polymer is {reducedPolymers.Min()}");
         }
 
-        static IEnumerable<char> ReactPolymer(List<char> unitsOrig)
+        static IEnumerable<char> ReactPolymer(char[] unitsOrig)
         {
             // don't alter original
             var units = new List<char>(unitsOrig);
