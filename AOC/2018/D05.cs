@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC._2018
 {
-    class D04
+    class D05
     {
         static readonly string input = File.ReadAllText("2018/D04.txt");
 
